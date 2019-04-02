@@ -43,7 +43,7 @@ class App extends Component {
   fetchCharacterData(){
     // Fetch Character data and set it to state
     const { storyInfo } = this.state;
-    const characterLink = storyInfo.characters.items[0].resourceURI;
+    const characterLink = storyInfo.characters.items[0].resourceURI.replace(/^http:\/\//i, 'https://');
     axios.get(`${characterLink}?apikey=${publicKey}`)
     .then(res => res.data.data)
     .then(characterData => this.setState(
