@@ -94,6 +94,7 @@ class App extends Component {
         <footer>
           <a href='https://marvel.com'>{storyObject.attributionText}</a>
           <a href='http://christianvonlehe.com'>This site was made with &hearts; by Christian von Lehe</a>
+          <p>More heroes coming soon</p>
         </footer>
       </div>
     );
