@@ -58,6 +58,8 @@ class App extends Component {
 
   render() {
     const { storyObject, storyInfo, comicImage, characterInfo, comicUrl, characterImage, characterUrl } = this.state;
+    const fullCharacterImage = characterImage+'/landscape_incredible.jpg';
+    fullCharacterImage = fullCharacterImage.replace(/^http:\/\//i, 'https://');
     return (
       <div className="app">
         <section className='title-section'>
@@ -87,7 +89,7 @@ class App extends Component {
             </a>
           </div>
           <div id='character-img-container' data-aos='slide-left' data-aos-duration='2500'>
-            <img id='character-img' src={characterImage+'/landscape_incredible.jpg'} alt={characterInfo.name}/>
+            <img id='character-img' src={fullCharacterImage} alt={characterInfo.name}/>
             <img id='thors-hammer' src='https://s3.amazonaws.com/project-4-bucket/thorshammer-edited.png' alt='Thors hammer'/>
           </div>
         </section>
