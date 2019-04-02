@@ -1,0 +1,282 @@
+/*WHOLE DOCUMENT*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700,900');
+
+body {
+  background: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+
+/*MAIN SECTION*/
+
+.title-section {
+  background: linear-gradient( rgba(0,0,0,.85), rgba(0,0,0,.9) ), url('https://wallpaperplay.com/walls/full/c/e/b/323958.jpg');
+  padding: 20px;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 6em;
+  margin: 0;
+  margin-left: 4%;
+}
+
+#story-desc, #character-desc {
+  font-size: 1.3em;
+  text-align: center;
+  font-weight: 700;
+  width: 90%;
+}
+
+#story-desc-container h1 {
+  font-size: 3.3em;
+}
+
+#story-desc-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#comic-details {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  background: red;
+  height: 60vh;
+  align-items: center;
+}
+
+#comic-details::after {
+  content: '';
+  background: transparent;
+  width: 0;
+  height: 0;
+  border-bottom: 80vh solid #f4f4f4;
+  border-left: 100vw solid transparent;
+  position: absolute;
+  left: 0%;
+  z-index: -1;
+}
+
+#comic-details div {
+  height: 100%;
+  width: 50vw;
+}
+
+#comic-img-container {
+  position: relative;
+}
+
+#comic-img {
+  position: absolute;
+  width: 550px;
+  top: 35%;
+  left: 15%;
+  background-position: center;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+button {
+  background: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+
+/*CHARACTER SECTION*/
+
+#title-section-2 {
+  margin-top: 20vh;
+  text-align: right;
+}
+
+#title-section-2 .title {
+  margin-right: 4%;
+}
+
+#character-details {
+  background: url('https://images.unsplash.com/photo-1526784408922-5877a417af64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80');
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  height: 80vh;
+  align-items: center;
+  position: relative;
+}
+
+#character-details::after {
+  content: '';
+  background: transparent;
+  width: 0;
+  height: 0;
+  border-bottom: 80vh solid #151515;
+  border-left: 70vw solid transparent;
+  position: absolute;
+  left: 30%;
+  z-index: 1;
+}
+
+#character-details div{
+  width: 50vw;
+}
+
+#character-desc-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#character-desc-container h1 {
+  font-size: 3.8em;
+}
+
+#character-img-container {
+  position: relative;
+  z-index: 2;
+}
+
+#character-img {
+  margin-left: 10%;
+  z-index: 1;
+}
+
+#thors-hammer {
+  width: 300px;
+  position: absolute;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  left: 40%;
+  top: 50%;
+}
+
+
+/*FOOTER*/
+
+footer {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+  margin-right: 5%;
+  margin-top: 1%;
+}
+
+
+
+/*MEDIA QUERIES*/
+
+@media only screen and (max-width: 600px) {
+
+  #comic-img {
+    width: 300px;
+    left: 15%;
+    top: 60%;
+  }
+
+  #comic-details div {
+    width: 100vw;
+    height: 45vh;
+  }
+
+  #character-img {
+    width: 350px;
+  }
+
+  #character-details div {
+    width: 100vw;
+    height: 100%;
+  }
+
+  #story-desc {
+    margin-top: -5%;
+  }
+
+  #story-desc-container h1 {
+    margin-top: 25%;
+  }
+
+  .title {
+    font-weight: 900;
+    font-size: 3em;
+    margin: 0;
+    margin-left: 4%;
+  }
+
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1238px) {
+
+  #comic-img {
+    width: 400px;
+    left: 30%;
+    top: 40%;
+  }
+
+  #character-details div {
+    width: 100vw;
+    height: 45vh;
+  }
+
+  #comic-details div {
+    width: 100vw;
+    height: 45vh;
+  }
+
+}
+
+@media only screen and (max-width: 1238px) {
+
+  #comic-details, #character-details {
+    height: 100%;
+  }
+
+  #comic-details::after {
+    border-bottom: 110vh solid #f4f4f4;
+    border-left: 100vw solid transparent;
+  }
+
+  #character-details::after {
+    border-bottom: 80vh solid transparent;
+    border-left: 70vw solid transparent;
+  }
+
+  #character-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 10%;
+  }
+
+  #character-img {
+    margin-left: 0;
+  }
+
+  #thors-hammer {
+    width: 0;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+}
+
+
