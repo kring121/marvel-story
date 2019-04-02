@@ -32,8 +32,8 @@ class App extends Component {
       {
         storyObject: story,
         storyInfo: story.data.results[0],
-        comicImage: story.data.results[0].thumbnail.path,
-        comicUrl: story.data.results[0].urls[0].url
+        comicImage: story.data.results[0].thumbnail.path.replace(/^http:\/\//i, 'https://'),
+        comicUrl: story.data.results[0].urls[0].url.replace(/^http:\/\//i, 'https://')
       }
     ))
     .then(res => this.fetchCharacterData())
@@ -49,8 +49,8 @@ class App extends Component {
     .then(characterData => this.setState(
       {
         characterInfo: characterData.results[0],
-        characterImage: characterData.results[0].thumbnail.path,
-        characterUrl: characterData.results[0].urls[0].url
+        characterImage: characterData.results[0].thumbnail.path.replace(/^http:\/\//i, 'https://'),
+        characterUrl: characterData.results[0].urls[0].url.replace(/^http:\/\//i, 'https://')
       }
     ))
     .catch(err => console.log(err.response))
@@ -58,8 +58,6 @@ class App extends Component {
 
   render() {
     const { storyObject, storyInfo, comicImage, characterInfo, comicUrl, characterImage, characterUrl } = this.state;
-    const fullCharacterImage = characterImage+'/landscape_incredible.jpg';
-    fullCharacterImage = fullCharacterImage.replace(/^http:\/\//i, 'https://');
     return (
       <div className="app">
         <section className='title-section'>
@@ -89,7 +87,7 @@ class App extends Component {
             </a>
           </div>
           <div id='character-img-container' data-aos='slide-left' data-aos-duration='2500'>
-            <img id='character-img' src={fullCharacterImage} alt={characterInfo.name}/>
+            <img id='character-img' src={characterImage+'/landscape_incredible.jpg'} alt={characterInfo.name}/>
             <img id='thors-hammer' src='https://s3.amazonaws.com/project-4-bucket/thorshammer-edited.png' alt='Thors hammer'/>
           </div>
         </section>
